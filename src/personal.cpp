@@ -6,10 +6,10 @@ using namespace std;
 	Personal::Personal(int id, string name, int worktime, int rate):Employee(id, name, worktime){
 		this->rate = rate;
 	}
-	int WorkTime::countByTime(){
+	int Personal::countByTime(){
 		return worktime*rate;
 	}
-	int getPayment() override{
+	int Personal::getPayment() override{
 		payment = countByTime();
 		return payment;
 	}
