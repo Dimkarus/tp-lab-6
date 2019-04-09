@@ -14,7 +14,7 @@ using namespace std;
 		return payment;
 	}
 
-	Cleaner::Cleaner(int id, string name, int worktime, int rate) :Personal(id, name, worktime, rate){};
+	
 	int Cleaner::getPayment(){
 		payment =Personal::getPayment();
 		return payment;
