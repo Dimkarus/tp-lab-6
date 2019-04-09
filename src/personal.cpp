@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string>
+#include "employee.h"
+#include "personal.h"
+using namespace std;
+	Personal::Personal(int id, string name, int worktime, int rate):Employee(id, name, worktime){
+		this->rate = rate;
+	}
+	int WorkTime::countByTime(){
+		return worktime*rate;
+	}
+	int getPayment() override{
+		payment = countByTime();
+		return payment;
+	}
+
+	Cleaner::Cleaner(int id, string name, int worktime, int rate) :Personal(id, name, worktime, rate){};
+	int Cleaner::getPayment(){
+		payment =Personal::getPayment();
+		return payment;
+	}
+	
+	Driver::Driver(int id, string name, int worktime, int rate, int overtime) :Personal(id, name, worktime, rate){
+		this->overtime = overtime;
+	};
+	int Driver::getPayment(){
+		payment =Personal::getPayment()+overtime;
+		return payment;
+	}
