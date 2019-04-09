@@ -10,7 +10,7 @@ class Manager :public Employee, public Project{
 protected:
 	double part;
 public:
-	Manager(int id, string name, int worktime, double part, int fund) :Employee(id, name, worktime), Project(fund);
+	Manager(int id, string name, int worktime, double part, int fund);
 	double countByProject();
 	int getPayment();
 }; // менеджер.Оплату получает из денег проекта, которым руководит.
@@ -20,7 +20,7 @@ protected:
 	int people;
 	int rate_for_sub=tmp;
 public:
-	ProjectManager(int id, string name, int worktime, double part,int fund, int people):Manager(id, name, worktime, part, fund);
+	ProjectManager(int id, string name, int worktime, double part,int fund, int people);
 	int countByHeading();
 	int getPayment();
 }; //проектный менеджер.
