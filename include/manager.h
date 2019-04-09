@@ -10,10 +10,10 @@ class Manager :public Employee, public Project{
 protected:
 	double part;
 public:
-	Manager::Manager(int id, string name, int worktime, double part, int fund) :Employee(id, name, worktime), Project(fund){
+	Manager(int id, string name, int worktime, double part, int fund) :Employee(id, name, worktime), Project(fund){
 		this->part = part;
 	};
-	double Project::countByProject(){
+	double countByProject(){
 		return fund*part;
 	}
 	int getPayment() override{
@@ -27,7 +27,7 @@ protected:
 	int people;
 	int rate_for_sub=tmp;
 public:
-	ProjectManager::ProjectManager(int id, string name, int worktime, double part,int fund, int people):Manager(id, name, worktime, part, fund){
+	ProjectManager(int id, string name, int worktime, double part,int fund, int people):Manager(id, name, worktime, part, fund){
 		this->people = people;
 	};
 	int countByHeading() override{
@@ -41,9 +41,9 @@ public:
 //forth level
 class SeniorManager :public ProjectManager{
 public:
-	SeniorManager::SeniorManager(int id, string name, int worktime, double part, int fund, int people) :ProjectManager(id, name, worktime, part,fund, people){};
+	SeniorManager(int id, string name, int worktime, double part, int fund, int people) :ProjectManager(id, name, worktime, part,fund, people){};
 	int SeniorManager::getPayment(){
-		payment = ProjectManager::getPayment();
+		payment = getPayment();
 		return payment;
 	}
 }; //руководитель направления.
