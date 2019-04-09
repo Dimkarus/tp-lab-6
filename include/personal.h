@@ -8,14 +8,14 @@ protected:
 	int rate;
 public:
 	Personal(int id, string name, int worktime, int rate):Employee(id, name, worktime){};
-	int WorkTime::countByTime(){};
-	int getPayment() override{};
+	int countByTime();
+	int getPayment();
 }; //работник по найму с оплатой за фактически отработанное время.Имеет ставку за час.
 //third level
 class Cleaner:public Personal{
 public:
 	Cleaner(int id, string name, int worktime, int rate) :Personal(id, name, worktime, rate){};
-	int getPayment(){};
+	int getPayment();
 	
 }; //уборщица.
 class Driver:public Personal{
@@ -23,6 +23,6 @@ private:
 	int overtime;
 public:
 	Driver(int id, string name, int worktime, int rate, int overtime) :Personal(id, name, worktime, rate){};
-	int getPayment(){};
+	int getPayment();
 }; // водитель.
-#endif
+
