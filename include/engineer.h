@@ -32,7 +32,7 @@ private:
 	int people;
 	int rate_for_sub=tmp;
 public:
-	TeamLeader(int id, string name, int worktime, int rate, double part,int fund, int people) :Programmer(id, name, worktime, rate, part, fund){};
+	TeamLeader(int id, string name, int worktime, int rate, double part,int fund, int people) :Programmer(id, name, worktime, rate, part, fund);
 	int countByHeading();
 	int getPayment();
 }; // ведущий программист.
