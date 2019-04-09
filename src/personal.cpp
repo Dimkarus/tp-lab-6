@@ -9,7 +9,7 @@ using namespace std;
 	int Personal::countByTime(){
 		return worktime*rate;
 	}
-	int Personal::getPayment() override{
+	int Personal::getPayment(){
 		payment = countByTime();
 		return payment;
 	}
