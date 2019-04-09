@@ -9,13 +9,13 @@ using namespace std;
 		this->rate = rate;
 		this->part = part;
 	};
-	int WorkTime::countByTime(){
+	int Engineer::countByTime(){
 		return worktime*rate;
 	}
-	double Project::countByProject(){
+	double Engineer::countByProject(){
 		return fund*part;
 	}
-	int getPayment() override{
+	int Engineer::getPayment(){
 		payment = countByProject()+countByTime();
 		return payment;
 	}
@@ -34,7 +34,7 @@ using namespace std;
 	TeamLeader::TeamLeader(int id, string name, int worktime, int rate, double part,int fund, int people) :Programmer(id, name, worktime, rate, part, fund){
 		this->people = people;
 	};
-	int countByHeading() override{
+	int TeamLeader::countByHeading(){
 		return  people*rate_for_sub;
 	}
 	int TeamLeader::getPayment(){
