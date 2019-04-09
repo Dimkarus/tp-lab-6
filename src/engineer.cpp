@@ -20,13 +20,12 @@ using namespace std;
 		return payment;
 	}
 
-	Programmer::Programmer(int id, string name, int worktime, int rate, double part,int fund) :Engineer(id, name, worktime, rate, part, fund){};
+	
 	int Programmer::getPayment(){
 		payment =Engineer::getPayment();
 		return payment;
 	}
 
-	Tester::Tester(int id, string name, int worktime, int rate, double part,int fund) :Engineer(id, name, worktime, rate, part, fund){};
 	int Tester::getPayment(){
 		payment =Engineer::getPayment();
 		return payment;
