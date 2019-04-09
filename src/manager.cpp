@@ -10,10 +10,10 @@ using namespace std;
 	Manager::Manager(int id, string name, int worktime, double part, int fund) :Employee(id, name, worktime), Project(fund){
 		this->part = part;
 	};
-	double Project::countByProject(){
+	double Manager::countByProject(){
 		return fund*part;
 	}
-	int getPayment() override{
+	int Manager::getPayment(){
 		payment = countByProject()+min_rate;
 		return payment;
 	}
@@ -21,15 +21,15 @@ using namespace std;
 	ProjectManager::ProjectManager(int id, string name, int worktime, double part,int fund, int people):Manager(id, name, worktime, part, fund){
 		this->people = people;
 	};
-	int countByHeading() override{
+	int countByHeading(){
 		return  people*rate_for_sub;
 	}
-	int getPayment() override{
+	int getPayment(){
 		payment = countByProject() + countByHeading() + min_rate;
 		return payment;
 	}
 
-	SeniorManager::SeniorManager(int id, string name, int worktime, double part, int fund, int people) :ProjectManager(id, name, worktime, part,fund, people){};
+	
 	int SeniorManager::getPayment(){
 		payment = ProjectManager::getPayment();
 		return payment;
