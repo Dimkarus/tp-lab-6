@@ -8,7 +8,7 @@ protected:
 	int rate;
 	double part;
 public:
-	Engineer(int id, string name, int worktime, int rate, double part,int fund) :Employee(id, name, worktime),Project(fund){};
+	Engineer(int id, string name, int worktime, int rate, double part,int fund);
 	int countByTime();
 	double countByProject();
 	int getPayment();
@@ -18,7 +18,7 @@ public:
 class Programmer:public Engineer{
 public:
 	Programmer(int id, string name, int worktime, int rate, double part,int fund) :Engineer(id, name, worktime, rate, part, fund){};
-	int PgetPayment();
+	int getPayment();
 }; // инженер - программист.
 class Tester: public Engineer{
 public:
@@ -32,7 +32,7 @@ private:
 	int people;
 	int rate_for_sub=tmp;
 public:
-	TeamLeader(int id, string name, int worktime, int rate, double part,int fund, int people) :Programmer(id, name, worktime, rate, part, fund);
+	TeamLeader(int id, string name, int worktime, int rate, double part,int fund, int people);
 	int countByHeading();
 	int getPayment();
 }; // ведущий программист.
