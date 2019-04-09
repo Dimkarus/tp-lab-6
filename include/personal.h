@@ -7,7 +7,7 @@ class Personal :public Employee, public WorkTime{
 protected:
 	int rate;
 public:
-	Personal(int id, string name, int worktime, int rate):Employee(id, name, worktime){};
+	Personal(int id, string name, int worktime, int rate):Employee(id, name, worktime);
 	int countByTime();
 	int getPayment();
 }; //работник по найму с оплатой за фактически отработанное время.Имеет ставку за час.
@@ -22,7 +22,7 @@ class Driver:public Personal{
 private:
 	int overtime;
 public:
-	Driver(int id, string name, int worktime, int rate, int overtime) :Personal(id, name, worktime, rate){};
+	Driver(int id, string name, int worktime, int rate, int overtime) :Personal(id, name, worktime, rate);
 	int getPayment();
 }; // водитель.
 
