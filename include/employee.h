@@ -11,7 +11,7 @@ protected:
 	int payment; //заработная плата.
 public:
 	Employee(int id, string name, int worktime){};
-	string Employee::getName(){};
+	string getName(){};
 	virtual int getPayment() = 0;
 };
 class WorkTime{
@@ -22,11 +22,10 @@ class Project{
 protected:
 	int fund;
 public:
-	Project::Project(int fund){};
+	Project(int fund){};
 	virtual double countByProject() = 0;
 };// -расчет оплаты исходя из участия в проекте(бюджет проекта делится пропорционально персональному вкладу).
 class Heading{
 public:
 	virtual int countByHeading() = 0;
 };// -расчет оплаты исходя из руководства(количество подчиненных).
-#endif
