@@ -21,10 +21,10 @@ using namespace std;
 	ProjectManager::ProjectManager(int id, string name, int worktime, double part,int fund, int people):Manager(id, name, worktime, part, fund){
 		this->people = people;
 	};
-	int countByHeading(){
+	int ProjectManager::countByHeading(){
 		return  people*rate_for_sub;
 	}
-	int getPayment(){
+	int ProjectManager::getPayment(){
 		payment = countByProject() + countByHeading() + min_rate;
 		return payment;
 	}
